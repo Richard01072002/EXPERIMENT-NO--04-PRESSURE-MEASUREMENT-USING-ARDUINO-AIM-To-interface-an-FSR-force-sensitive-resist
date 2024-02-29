@@ -59,6 +59,7 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### FIGURE-03 CIRCUIT DIAGRAM
+![image](https://github.com/Richard01072002/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/141472248/cde8f1ab-87c8-49e7-b947-c8a89f0747af)
 
 
 
@@ -76,26 +77,47 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
- *your roll no 
- * your name 
- * department and year 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ # your roll no 212222233005
+ # your name RICHARDSON A
+ # department and year AIDS 2year
+
+```
+int far;
+int LED=7;
+void setup()
+{
+  pinMode(LED, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  far=analogRead(A0);
+  Serial.print("raw VALUE=");
+  Serial.println(far);
+  delay(1000);
+  float m;
+  m=map(far,0,159,0,10);
+  Serial.print("MAPED VALUE= ");
+  Serial.println(m);
+  delay(1000);
+  
+  if (m>5)
+  {
+    digitalWrite (LED,HIGH);
+    	delay(500);
+    digitalWrite (LED,LOW);
+    	delay(500);
+}
+}  
+```
+![image](https://github.com/Richard01072002/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/141472248/50af9a8c-899f-4092-ada3-232adf6c8bac)
  
 
 ![image](https://user-images.githubusercontent.com/36288975/188804653-a3154e8e-2655-46f2-9dcd-f425dd1ba109.png)
+
+![image](https://github.com/Richard01072002/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/141472248/49c0860e-3a94-4ee1-84b6-007fe0b54702)
+
 
 
 ### TABLE -02 standard deviation table 
@@ -111,9 +133,8 @@ N is the total number of values
 
 For those unfamiliar with summation notation, the equation above may seem daunting, but when addressed through its individual components, this summation is not particularly complicated. The i=1 in the summation indicates the starting index, i.e. for the data set 1, 3, 4, 7, 8, i=1 would be 1, i=2 would be 3, and so on. Hence the summation notation simply means to perform the operation of (xi - μ)2 on each value through N, which in this case is 5 since there are 5 values in this data set.
 
-EX:           μ = (1+3+4+7+8) / 5 = 4.6        
-σ = √[(1 - 4.6)2 + (3 - 4.6)2 + ... + (8 - 4.6)2)]/5
-σ = √(12.96 + 2.56 + 0.36 + 5.76 + 11.56)/5 = 2.577
+EX: μ = (2+3+4+5+6+7+8+8+9+10) / 10 = 6.2
+σ = √[(2 - 6.2)2 + (3 - 6.2)2 + ... + (10 - 6.2)2)]/10 σ = 0.7975
 
 
 
