@@ -77,9 +77,9 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
- # your roll no 212222233005
- # your name RICHARDSON A
- # department and year AIDS 2year
+ #### your roll no 212222233005
+ #### your name RICHARDSON A
+ #### department and year AIDS 2year
 
 ```
 int far;
